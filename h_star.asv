@@ -1,0 +1,10 @@
+function [h_star_data h_adaptive maze n_start target]=h_star(g_s_goal,h,g_s)
+load maze;
+for i=1:101%size(g_s(1))
+    for j=1:101%size(g_s(2))
+             h_adaptive(i,j)=h(i,j)+g_s_goal-g_s(i,j);
+    end
+end
+save h_star_data h_adaptive maze n_start target
+
+
